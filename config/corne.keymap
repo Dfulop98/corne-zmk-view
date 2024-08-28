@@ -35,10 +35,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB         &kp N1        &kp N2        &kp F1    &kp F2  &kp F3       &trans     &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH  &kp EQUAL         &kp INSERT  &kp DELETE
-&kp LEFT_SHIFT  &bt BT_SEL 0  &bt BT_SEL 1  &kp F4    &kp F5  &kp F6       &kp LEFT   &kp DOWN           &kp UP                &kp RIGHT         &kp PG_UP   &kp PAGE_DOWN
-&kp LCTRL       &trans        &trans        &kp F7    &kp F8  &kp F9       &kp MINUS  &kp POUND          &kp N0                &kp LEFT_BRACKET  &kp HOME    &kp END
-                                            &kp LGUI  &mo 3   &kp SPACE    &kp RET    &trans             &kp RALT
+&kp TAB         &bt BT_SEL 0  &kp F1  &kp F2    &kp F3   &kp F4       &trans     &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH  &kp EQUAL         &kp INSERT  &kp DELETE
+&kp LEFT_SHIFT  &bt BT_SEL 1  &kp F5  &kp F6    &kp F7   &kp F8       &kp LEFT   &kp DOWN           &kp UP                &kp RIGHT         &kp PG_UP   &kp PAGE_DOWN
+&kp LCTRL       &bt BT_SEL 2  &kp F9  &kp F10   &kp F11  &kp F12      &kp MINUS  &kp POUND          &kp N0                &kp LEFT_BRACKET  &kp HOME    &kp END
+                                      &kp LGUI  &mo 3    &kp SPACE    &kp RET    &trans             &kp RALT
             >;
         };
 
@@ -50,10 +50,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB           &kp RS(NUMBER_1)  &kp RS(NUMBER_2)  &kp RS(NUMBER_3)   &kp RS(N4)                &kp RS(N5)    &kp N1     &kp N2  &kp N3    &kp RS(N8)  &kp RS(N9)  &kp RA(Q)
-&kp LEFT_SHIFT    &kp RA(N1)        &kp RA(N7)        &kp RA(X)          &kp RA(C)                 &kp RS(N6)    &kp N4     &kp N5  &kp N6    &kp RA(F)   &kp RA(G)   &kp RA(W)
-&kp LEFT_CONTROL  &kp RA(V)         &kp RA(SLASH)     &kp RA(SEMICOLON)  &kp RA(NON_US_BACKSLASH)  &kp RA(Z)     &kp N7     &kp N8  &kp N9    &kp RA(B)   &kp RA(N)   &kp RS(NUMBER_6)
-                                                      &kp LGUI           &to 0                     &kp SPACE     &kp ENTER  &kp N0  &kp RALT
+&kp TAB           &kp RS(NUMBER_1)  &kp RS(NUMBER_2)  &kp RS(NUMBER_3)   &kp RS(N4)                &kp RS(N5)    &kp N1     &kp N2        &kp N3    &kp RS(N8)  &kp RS(N9)  &kp RA(Q)
+&kp LEFT_SHIFT    &kp RA(N1)        &kp RA(N7)        &kp RA(X)          &kp RA(C)                 &kp RS(N6)    &kp N4     &kp N5        &kp N6    &kp RA(F)   &kp RA(G)   &kp RA(W)
+&kp LEFT_CONTROL  &kp RA(V)         &kp RA(SLASH)     &kp RA(SEMICOLON)  &kp RA(NON_US_BACKSLASH)  &kp RA(Z)     &kp N7     &kp N8        &kp N9    &kp RA(B)   &kp RA(N)   &kp RS(NUMBER_6)
+                                                      &kp LGUI           &to 0                     &kp SPACE     &kp ENTER  &kp NUMBER_0  &kp RALT
             >;
         };
 
