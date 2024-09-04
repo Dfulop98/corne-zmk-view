@@ -1,0 +1,60 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+            // |  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
+            bindings = <
+&kp TAB         &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I          &kp O    &kp P     &kp BSPC
+&kp LEFT_SHIFT  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K          &kp L    &kp SEMI  &kp SQT
+&kp LCTRL       &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA      &kp DOT  &kp FSLH  &kp ESC
+                              &kp LGUI  &mo 2  &kp SPACE    &kp RET  &mo 1  &kp RIGHT_ALT
+            >;
+        };
+
+        arrow_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&kp TAB         &bt BT_CLR    &kp F1  &kp F2    &kp F3   &kp F4       &trans     &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH  &kp EQUAL         &kp INSERT  &kp DELETE
+&kp LEFT_SHIFT  &bt BT_SEL 1  &kp F5  &kp F6    &kp F7   &kp F8       &kp LEFT   &kp DOWN           &kp UP                &kp RIGHT         &kp PG_UP   &kp PAGE_DOWN
+&kp LCTRL       &bt BT_SEL 2  &kp F9  &kp F10   &kp F11  &kp F12      &kp MINUS  &kp POUND          &kp N0                &kp LEFT_BRACKET  &kp HOME    &kp END
+                                      &kp LGUI  &mo 0    &kp SPACE    &kp RET    &trans             &kp RALT
+            >;
+        };
+
+        raise_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&kp TAB           &kp RS(NUMBER_1)  &kp RS(NUMBER_2)  &kp RS(NUMBER_3)   &kp RS(N4)                &kp RS(N5)    &kp N1     &kp N2     &kp N3    &kp RS(N8)  &kp RS(N9)  &kp RA(Q)
+&kp LEFT_SHIFT    &kp RA(N1)        &kp RA(N7)        &kp RA(X)          &kp RA(C)                 &kp RS(N6)    &kp N4     &kp N5     &kp N6    &kp RA(F)   &kp RA(G)   &kp RA(W)
+&kp LEFT_CONTROL  &kp RA(V)         &kp RA(SLASH)     &kp RA(SEMICOLON)  &kp RA(NON_US_BACKSLASH)  &kp RA(Z)     &kp N7     &kp N8     &kp N9    &kp RA(B)   &kp RA(N)   &kp RS(NUMBER_6)
+                                                      &kp LGUI           &trans                    &kp SPACE     &kp ENTER  &kp GRAVE  &kp RALT
+            >;
+        };
+    };
+};
