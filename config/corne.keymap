@@ -6,6 +6,7 @@
 
 #include <../boards/shields/corne/boards/nice_nano.overlay>
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -50,10 +51,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp K_WWW         &kp UP_ARROW    &trans           &trans  &trans       &trans     &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH  &kp EQUAL         &kp INSERT  &kp DELETE
-&trans  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp F7  &trans       &kp LEFT   &kp DOWN           &kp UP                &kp RIGHT         &kp PG_UP   &kp PAGE_DOWN
-&trans  &kp K_CALCULATOR  &trans          &trans           &trans  &trans       &kp MINUS  &kp NON_US_HASH    &kp N0                &kp LEFT_BRACKET  &kp HOME    &kp END
-                                          &kp LGUI         &trans  &kp SPACE    &kp RET    &trans             &kp RALT
+&trans  &trans          &kp UP_ARROW    &trans           &trans  &bt BT_CLR_ALL    &trans     &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH  &kp EQUAL         &kp INSERT  &kp DELETE
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp F7  &bt BT_SEL 0      &kp LEFT   &kp DOWN           &kp UP                &kp RIGHT         &kp PG_UP   &kp PAGE_DOWN
+&trans  &trans          &trans          &trans           &trans  &bt BT_SEL 1      &kp MINUS  &kp NON_US_HASH    &kp N0                &kp LEFT_BRACKET  &kp HOME    &kp END
+                                        &kp LGUI         &trans  &kp SPACE         &kp RET    &trans             &kp RALT
             >;
         };
 
