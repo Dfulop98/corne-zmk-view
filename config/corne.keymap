@@ -36,10 +36,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4       &kp N5             &kp NUMBER_6  &kp N7      &kp N8           &kp N9        &kp RS(N8)  &kp RS(N9)
-&kp LSHIFT       &kp F1        &kp F2        &kp F3        &kp F4             &kp F5             &kp F6        &kp F7      &kp F8           &kp F9        &kp RA(F)   &kp RA(G)
-&kp LCTRL        &kp F10       &kp F11       &kp F12       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp C_MUTE    &kp K_NEXT  &kp PRINTSCREEN  &kp CAPSLOCK  &kp RA(B)   &kp RA(N)
-                                             &kp LGUI      &trans             &kp SPACE          &kp ENTER     &trans      &kp RALT
+&kp GRAVE   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4       &kp N5             &kp NUMBER_6  &kp N7      &kp N8           &kp N9        &kp RS(N8)  &kp RS(N9)
+&kp LSHIFT  &kp F1        &kp F2        &kp F3        &kp F4             &kp F5             &kp F6        &kp F7      &kp F8           &kp F9        &kp RA(F)   &kp RA(G)
+&kp LCTRL   &kp F10       &kp F11       &kp F12       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp C_MUTE    &kp K_NEXT  &kp PRINTSCREEN  &kp CAPSLOCK  &kp RA(B)   &kp RA(N)
+                                        &kp LGUI      &trans             &kp SPACE          &kp ENTER     &trans      &kp RALT
             >;
         };
 
