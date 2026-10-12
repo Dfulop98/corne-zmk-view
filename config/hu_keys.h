@@ -40,23 +40,23 @@
 #define HU_QUES   &kp LS(COMMA)     /* ? */
 #define HU_COLON  &kp LS(DOT)       /* : */
 
-/* AltGr symbols */
-#define HU_BSLH   &kp RA(Q)         /* \ */
-#define HU_PIPE   &kp RA(W)         /* | */
-#define HU_AT     &kp RA(V)         /* @ */
-#define HU_HASH   &kp RA(X)         /* # */
-#define HU_DLR    &kp RA(SEMI)      /* $ */
-#define HU_AMPS   &kp RA(C)         /* & */
-#define HU_STAR   &kp RA(FSLH)      /* * */
-#define HU_SEMI   &kp RA(COMMA)     /* ; */
-#define HU_LT     &kp RA(NON_US_BSLH) /* < */
-#define HU_GT     &kp RA(Z)         /* > */
-#define HU_LBKT   &kp RA(F)         /* [ */
-#define HU_RBKT   &kp RA(G)         /* ] */
-#define HU_LBRC   &kp RA(B)         /* { */
-#define HU_RBRC   &kp RA(N)         /* } */
-#define HU_TILDE  &kp RA(N1)        /* ~ (not a dead key on Windows HU) */
-#define HU_GRAVE  &kp RA(N7)        /* ` (not a dead key on Windows HU) */
+/* AltGr symbols: &ag = AltGr macro in corne.keymap (Remote Desktop safe) */
+#define HU_BSLH   &ag Q             /* \ */
+#define HU_PIPE   &ag W             /* | */
+#define HU_AT     &ag V             /* @ */
+#define HU_HASH   &ag X             /* # */
+#define HU_DLR    &ag SEMI          /* $ */
+#define HU_AMPS   &ag C             /* & */
+#define HU_STAR   &ag FSLH          /* * */
+#define HU_SEMI   &ag COMMA         /* ; */
+#define HU_LT     &ag NON_US_BSLH     /* < */
+#define HU_GT     &ag Z             /* > */
+#define HU_LBKT   &ag F             /* [ */
+#define HU_RBKT   &ag G             /* ] */
+#define HU_LBRC   &ag B             /* { */
+#define HU_RBRC   &ag N             /* } */
+#define HU_TILDE  &ag N1            /* ~ (not a dead key on Windows HU) */
+#define HU_GRAVE  &ag N7            /* ` (not a dead key on Windows HU) */
 /* ^ is AltGr+3 but a dead key on Windows HU -> use the &hu_caret macro */
 
 /* Clipboard (Ctrl+Z is Ctrl + US-Y on QWERTZ) */

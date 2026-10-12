@@ -32,12 +32,26 @@
 
 / {
     macros {
+        /* AltGr + key with AltGr sent in its own report and short pauses.
+         * &kp RA(X) sends both in one report: fine locally, but over Remote
+         * Desktop the AltGr sometimes arrives late and the plain key is typed. */
+        ag: altgr_tap {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings = <&macro_press &kp RALT>, <&macro_param_1to1>,
+                       <&macro_tap &kp MACRO_PLACEHOLDER>, <&macro_release &kp RALT>;
+        };
         /* ^ is a dead key on Windows HU: AltGr+3 then Space makes it appear at once.
          * (~ and ` are plain AltGr keys there, see hu_keys.h) */
         hu_caret: hu_caret {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(N3) &kp SPACE>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings = <&macro_press &kp RALT>, <&macro_tap &kp N3>,
+                       <&macro_release &kp RALT>, <&macro_tap &kp SPACE>;
         };
         /* Alt+Tab that keeps Alt held while the key is held:
          * tap = previous app, hold + tap Tab (G) = walk the switcher, release = switch */

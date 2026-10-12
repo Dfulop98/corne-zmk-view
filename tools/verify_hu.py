@@ -87,10 +87,13 @@ def type_sequence(codes):
     """Type a macro key by key, keeping Windows' dead-key state between presses,
     exactly like the keyboard sends it. Returns the text that appears."""
     _press("SPACE"), _press("SPACE")                   # clear any pending dead key
-    out = ""
+    out, held = "", False
     for c in codes:
+        if c == "RALT":                                # macro_press / macro_release AltGr
+            held = not held
+            continue
         mods, key = split_mods(c)
-        out += _press(key, shift=bool(mods & {"LS", "RS"}), altgr="RA" in mods)
+        out += _press(key, shift=bool(mods & {"LS", "RS"}), altgr=held or "RA" in mods)
     _press("SPACE"), _press("SPACE")
     return out
 
@@ -116,7 +119,9 @@ def actual_kp(code):
 
 def hu_defines():
     text = (ROOT / "config" / "hu_keys.h").read_text(encoding="utf-8")
-    return dict(re.findall(r"#define\s+(HU_\w+)\s+&kp\s+(\S+)", text))
+    out = dict(re.findall(r"#define\s+(HU_\w+)\s+&kp\s+(\S+)", text))
+    out.update({n: f"RA({k})" for n, k in re.findall(r"#define\s+(HU_\w+)\s+&ag\s+(\S+)", text)})
+    return out
 
 
 def macros():
