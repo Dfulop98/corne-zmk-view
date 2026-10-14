@@ -45,7 +45,7 @@ HU = {
     "HU_CUT": "Cut", "HU_COPY": "Copy", "HU_PASTE": "Paste",
 }
 BEHAVIOR = {
-    "&hu_caret": "^", "&app_switch": "Apps",
+    "&hu_caret": "^", "&app_switch": "Apps", "&caps_word": "CapsW",
     "&bootloader": "Boot", "&trans": "", "&none": "",
 }
 

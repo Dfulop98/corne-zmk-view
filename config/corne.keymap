@@ -30,6 +30,13 @@
 #define EDIT 5
 #define SYS  6
 
+/* Caps Word on the Hungarian layout: _ is Shift + the "-" key (FSLH) and 0 is
+ * GRAVE, so those keep the word going too. Accented letters end it (ZMK only
+ * shifts A-Z). */
+&caps_word {
+    continue-list = <LS(FSLH) GRAVE BSPC DEL>;
+};
+
 / {
     macros {
         /* AltGr + key with AltGr sent in its own report and short pauses.
@@ -93,7 +100,7 @@
         compatible = "zmk,keymap";
 
         base_layer {
-            display-name = "Base";
+            display-name = "BASE";
             // ,-----------------------------------------.   ,-----------------------------------------.
             // |TAB/WIN|  Q  |  W  |  E  |  R  |  T  |   |  Z  |  U  |  I  |  O  |  P  | BKSP |
             // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  É  |  Á   |
@@ -108,7 +115,7 @@
         };
 
         num_layer {
-            display-name = "Num";
+            display-name = "NUM";
             // Old LWR layer; media / PrtSc / Caps replaced by @ # < > ; :
             // ,-----------------------------------------.   ,-----------------------------------------.
             // |  0   |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  (  |  )   |
@@ -124,7 +131,7 @@ HU_0       &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &kp N6   &kp N7   &k
         };
 
         sym_layer {
-            display-name = "Sym";
+            display-name = "SYM";
             // ,-----------------------------------------.   ,-----------------------------------------.
             // | CAPS |  '  |  "  |  +  |  !  |  %  |   |  `  |  Ú  |  Í  |  Ó  |  =  |  /   |
             // | SHFT |  ~  |  $  |  &  |  *  |  ^  |   | LEFT| DOWN|  UP | RGHT| PGUP|  |   |
@@ -140,13 +147,13 @@ HU_0       &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &kp N6   &kp N7   &k
         };
 
         acc_layer {
-            display-name = "Acc";
-            // Umlauts on their own vowel, Del on Backspace; everything else falls through.
+            display-name = "ACC";
+            // Caps Word on Tab, umlauts on their own vowel, Del on Backspace; the rest falls through.
             // ,-----------------------------------------.   ,-----------------------------------------.
-            // |      |     |     |     |     |     |   |     |  Ü  |     |  Ö  |     | DEL  |
+            // |CapsW |     |     |     |     |     |   |     |  Ü  |     |  Ö  |     | DEL  |
             // `------------------| ### |     |     |   |     |(SYM)|     |-----------------'
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans       &trans  HU_UE   &trans  HU_OE   &trans  &kp DEL
+&caps_word &trans &trans &trans &trans  &trans       &trans  HU_UE   &trans  HU_OE   &trans  &kp DEL
 &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans       &trans  &trans  &trans
@@ -154,7 +161,7 @@ HU_0       &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &kp N6   &kp N7   &k
         };
 
         dacc_layer {
-            display-name = "Dacc";
+            display-name = "ACC+SYM";
             // ACC + SYM: double acute on O / U, the rest falls through to ACC.
             // ,-----------------------------------------.   ,-----------------------------------------.
             // |      |     |     |     |     |     |   |     |  Ű  |     |  Ő  |     |      |
@@ -167,7 +174,7 @@ HU_0       &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &kp N6   &kp N7   &k
         };
 
         edit_layer {
-            display-name = "Edit";
+            display-name = "EDIT";
             // Right outer thumb held. Left hand: windows / desktops, right hand: media.
             // ,-----------------------------------------.   ,-----------------------------------------.
             // |      |ALTF4| MAX |<-MON|MON->| LOCK|   | DESK| PLAY| STOP| MUTE|     | DEL  |
@@ -187,7 +194,7 @@ HU_0       &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &kp N6   &kp N7   &k
         };
 
         sys_layer {
-            display-name = "Sys";
+            display-name = "SYS";
             // NUM + SYM held together. BOOT on both halves (each half flashes itself).
             // ,-----------------------------------------.   ,-----------------------------------------.
             // |      | BT0 | BT1 | BT2 | BT3 |USB/BT|   |     |     |     |     |     |      |
